@@ -1,0 +1,27 @@
+<Application x:Class="QingLan.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries><XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" /></ResourceDictionary.MergedDictionaries>
+      <Color x:Key="SystemAccentColor">#326B7B</Color>
+      <SolidColorBrush x:Key="Ink" Color="#223F49" />
+      <SolidColorBrush x:Key="Muted" Color="#657D84" />
+      <SolidColorBrush x:Key="Accent" Color="#326B7B" />
+      <SolidColorBrush x:Key="Line" Color="#D8E3E3" />
+      <FontFamily x:Key="Literary">KaiTi</FontFamily>
+      <FontFamily x:Key="ReadingFont">SimSun</FontFamily>
+      <Style TargetType="Button">
+        <Setter Property="CornerRadius" Value="12" />
+        <Setter Property="Padding" Value="18,11" />
+        <Setter Property="Background" Value="#BAFFFFFF" />
+        <Setter Property="BorderBrush" Value="#709DB7BD" />
+        <Setter Property="Foreground" Value="{StaticResource Ink}" />
+        <Setter Property="FontFamily" Value="Microsoft YaHei UI" />
+      </Style>
+      <Style x:Key="PrimaryButton" TargetType="Button" BasedOn="{StaticResource AccentButtonStyle}">
+        <Setter Property="CornerRadius" Value="12" /><Setter Property="Padding" Value="22,12" />
+        <Setter Property="Background" Value="{StaticResource Accent}" /><Setter Property="Foreground" Value="White" />
+      </Style>
+      <Style TargetType="TextBlock"><Setter Property="Foreground" Value="{StaticResource Ink}" /></Style>
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>

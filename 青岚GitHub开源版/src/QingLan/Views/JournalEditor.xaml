@@ -1,0 +1,10 @@
+<ContentDialog x:Class="QingLan.Views.JournalEditor" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="把此刻，写给未来" PrimaryButtonText="收好这一页" CloseButtonText="暂不保存" DefaultButton="Primary" PrimaryButtonClick="Save_Click" Closing="Editor_Closing">
+  <StackPanel Spacing="16" MinWidth="280">
+    <TextBlock x:Name="ContextLabel" TextWrapping="Wrap" FontFamily="{StaticResource Literary}" FontSize="20"/>
+    <TextBlock Text="不必写得完整，也不必给它一个题目。" Foreground="{StaticResource Muted}" FontSize="13"/>
+    <TextBox x:Name="Editor" PlaceholderText="此刻，你想记住什么……" AcceptsReturn="True" TextWrapping="Wrap" MinHeight="240" MaxHeight="390" MaxLength="30000" FontFamily="{StaticResource Literary}" FontSize="22" Padding="16" CornerRadius="12" TextChanged="Editor_TextChanged" ScrollViewer.VerticalScrollBarVisibility="Auto" AutomationProperties.Name="随心记正文"/>
+    <Grid><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions><TextBlock x:Name="WrittenDate" FontSize="12" Foreground="{StaticResource Muted}"/><TextBlock x:Name="Count" Grid.Column="1" FontSize="12" Foreground="{StaticResource Muted}"/></Grid>
+    <TextBlock Text="单独珍藏在随心记里，几天后作为一篇惊喜散文与你重逢。" FontSize="12" TextWrapping="Wrap" Foreground="{StaticResource Muted}" LineHeight="21"/>
+    <InfoBar x:Name="ErrorMessage" IsOpen="False" Severity="Error" IsClosable="False"/>
+  </StackPanel>
+</ContentDialog>

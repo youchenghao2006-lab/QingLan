@@ -1,0 +1,12 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+  </Configurations>
+  <Folder Name="/src/">
+    <Project Path="src/QingLan/QingLan.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/QingLan.Tests/QingLan.Tests.csproj" />
+    <Project Path="tests/QingLan.CampusTests/QingLan.CampusTests.csproj" />
+  </Folder>
+</Solution>

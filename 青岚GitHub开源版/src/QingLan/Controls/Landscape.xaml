@@ -1,0 +1,17 @@
+<UserControl x:Class="QingLan.Controls.Landscape" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" IsHitTestVisible="False">
+  <Viewbox Stretch="UniformToFill">
+    <Canvas Width="520" Height="330">
+      <Ellipse Width="85" Height="85" Fill="#D6DED0" Canvas.Left="349" Canvas.Top="27"/>
+      <Path Data="M0,198 Q55,150 100,166 Q158,44 232,144 Q290,191 340,109 Q385,70 441,149 Q482,127 520,164 L520,330 L0,330Z" Fill="#CADCDB"/>
+      <Path Data="M0,234 Q48,180 100,201 Q161,113 214,190 Q276,152 323,216 Q397,131 459,197 Q490,177 520,199 L520,330 L0,330Z" Fill="#AFCBCD"/>
+      <Path Data="M0,281 Q92,195 178,246 Q239,206 298,258 Q404,198 520,240 L520,330 L0,330Z" Fill="#86B0B8"/>
+      <Path Data="M0,282 Q148,265 271,287 Q402,299 520,273 L520,330 L0,330Z" Fill="#D6E7E7"/>
+      <Path Data="M37,295 Q110,286 163,295 M194,307 Q303,294 407,303 M354,286 Q414,278 490,284 M77,315 Q116,311 141,315" Stroke="#93B6BD" StrokeThickness="1.3"/>
+      <Path Data="M296,80 Q331,64 364,75 M250,98 Q305,85 336,94 M387,120 Q421,111 452,116" Stroke="#EBF1E9" StrokeThickness="3" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
+      <Path Data="M116,91 Q123,82 130,91 Q139,81 147,86 M166,73 Q172,67 178,73 Q184,67 190,70" Stroke="#567D85" StrokeThickness="1.6"/>
+      <Path Data="M375,283 L409,283 Q394,296 380,286Z" Fill="#477482"/>
+      <Path Data="M394,282 L394,249 L412,276Z" Fill="#F3F2E7"/>
+      <Path Data="M391,252 L391,281" Stroke="#567780" StrokeThickness="1.5"/>
+    </Canvas>
+  </Viewbox>
+</UserControl>

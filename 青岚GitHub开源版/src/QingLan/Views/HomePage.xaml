@@ -1,0 +1,50 @@
+<Page x:Class="QingLan.Views.HomePage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:art="using:QingLan.Controls" NavigationCacheMode="Enabled">
+  <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Padding="0,0,0,20">
+    <StackPanel x:Name="ContentPanel" MaxWidth="1180" Margin="32,22,32,28" Spacing="25">
+      <Grid><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+        <StackPanel Spacing="8"><TextBlock Text="今日拾光" FontSize="34" FontFamily="{StaticResource Literary}"/><TextBlock x:Name="DateLabel" Foreground="{StaticResource Muted}" FontSize="13"/></StackPanel>
+        <Button Grid.Column="1" Content="落笔 · 随心记" VerticalAlignment="Center" Click="Write_Click"/>
+      </Grid>
+      <Border Background="#F8FBFA" CornerRadius="24" BorderBrush="#DCE7E6" BorderThickness="1">
+        <Grid MinHeight="318">
+          <Grid.ColumnDefinitions><ColumnDefinition Width="1.2*"/><ColumnDefinition x:Name="ArtColumn" Width="0.9*"/></Grid.ColumnDefinitions>
+          <StackPanel Margin="32,30,18,30" Spacing="17">
+            <TextBlock x:Name="TodayTag" Text="今 日 一 文" Foreground="{StaticResource Accent}" FontSize="12" CharacterSpacing="160"/>
+            <TextBlock x:Name="TodayTitle" Text="翻开新的一页" FontSize="37" FontFamily="{StaticResource Literary}" TextWrapping="Wrap"/>
+            <TextBlock x:Name="TodayAuthor" Foreground="{StaticResource Muted}" FontSize="13"/>
+            <TextBlock x:Name="TodaySummary" FontFamily="{StaticResource ReadingFont}" FontSize="17" LineHeight="29" TextWrapping="Wrap" MaxLines="3" TextTrimming="CharacterEllipsis"/>
+            <StackPanel Orientation="Horizontal" Spacing="10"><Button Content="展开阅读   →" Style="{StaticResource PrimaryButton}" Click="Read_Click"/><Button x:Name="TodayFavorite" Content="收藏" Click="Favorite_Click"/></StackPanel>
+          </StackPanel>
+          <Grid x:Name="ArtPanel" Grid.Column="1" CornerRadius="0,24,24,0" Background="#E7EFEB">
+            <art:Landscape VerticalAlignment="Bottom" Height="270"/>
+            <TextBlock Text="山 静 日 长&#xA;水 流 花 开" FontFamily="{StaticResource Literary}" FontSize="23" LineHeight="35" Margin="0,30,25,0" HorizontalAlignment="Right" Foreground="#52777D"/>
+            <Border Background="#A16E5C" CornerRadius="5" Padding="5,4" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,110,30,0"><TextBlock Text="青岚" FontFamily="{StaticResource Literary}" Foreground="#FFFAEF" FontSize="14"/></Border>
+          </Grid>
+        </Grid>
+      </Border>
+      <Grid><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center"><FontIcon Glyph="&#xE753;" FontSize="13" Foreground="{StaticResource Accent}"/><TextBlock x:Name="SourceText" FontSize="12" TextWrapping="Wrap" Foreground="{StaticResource Muted}"/></StackPanel>
+        <Button Grid.Column="1" Content="重新连接" Click="Refresh_Click" Padding="12,7" FontSize="12" Background="Transparent" BorderThickness="0"/>
+      </Grid>
+      <Border Background="#A8E1EBE9" CornerRadius="16" Padding="22,19">
+        <Grid><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+          <StackPanel Spacing="7"><TextBlock Text="把此刻，写给未来的自己" FontFamily="{StaticResource Literary}" FontSize="23"/><TextBlock Text="存下一页心事，等某一天与它不期而遇。" Foreground="{StaticResource Muted}" FontSize="13" TextWrapping="Wrap"/></StackPanel>
+          <Button Grid.Column="1" Content="写一页  ↗" VerticalAlignment="Center" Click="Write_Click" Margin="15,0,0,0"/>
+        </Grid>
+      </Border>
+      <StackPanel Spacing="6"><TextBlock Text="往日书页" FontFamily="{StaticResource Literary}" FontSize="27"/><TextBlock Text="读过的日子，也值得再翻一翻。" FontSize="13" Foreground="{StaticResource Muted}"/></StackPanel>
+      <ItemsControl x:Name="HistoryList">
+        <ItemsControl.ItemTemplate>
+          <DataTemplate><Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" Margin="0,0,0,10" Padding="22,20" Click="History_Click" Tag="{Binding}">
+            <Grid ColumnSpacing="20"><Grid.ColumnDefinitions><ColumnDefinition Width="58"/><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+              <StackPanel VerticalAlignment="Center"><TextBlock Text="{Binding Day}" FontSize="29" FontFamily="{StaticResource Literary}"/><TextBlock Text="{Binding Month}" FontSize="11" Foreground="{StaticResource Muted}"/></StackPanel>
+              <StackPanel Grid.Column="1" Spacing="8"><TextBlock Text="{Binding Article.Title}" FontFamily="{StaticResource Literary}" FontSize="23" TextTrimming="CharacterEllipsis"/><TextBlock Text="{Binding Article.Summary}" FontSize="13" Foreground="{StaticResource Muted}" MaxLines="1" TextTrimming="CharacterEllipsis"/></StackPanel>
+              <TextBlock Grid.Column="2" Text="→" Foreground="{StaticResource Accent}" VerticalAlignment="Center" FontSize="20"/>
+            </Grid>
+          </Button></DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+      <TextBlock Text="—  愿寻常日子，也有可珍藏的光  —" HorizontalAlignment="Center" FontFamily="{StaticResource Literary}" Foreground="{StaticResource Muted}" FontSize="17" Margin="0,10"/>
+    </StackPanel>
+  </ScrollViewer>
+</Page>
