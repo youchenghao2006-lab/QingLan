@@ -12,7 +12,9 @@
 
 源码仓库仅引用上述包，不包含包缓存、运行时或微软 SDK 二进制文件。依赖的传递组件也保留各自许可。Windows App SDK 仓库的开源许可与 NuGet 成品 SDK 许可不能简单视为同一个许可。
 
-如分发自包含的运行版，请检查所用版本 NuGet 包和发布输出中的全部许可、第三方声明及再分发要求，并保留所需声明；不要将整个发布目录标成“全部文件都是 MIT”。本次交付只整理源码，不附带第三方运行时安装包。
+发布脚本将已还原 NuGet 包中根目录的许可/声明及元数据指定的许可文件复制到发布目录 `licenses/`，并生成不包含本机路径的 `nuget-packages.json` 记录许可表达式、链接与文件清单。只提供链接的依赖会在清单中保留原链接；此操作不更改任何第三方许可。
+
+如分发自包含的运行版，仍需按所用版本核对运行时组件和第三方再分发要求，并保留所需声明；不要将整个发布目录标成“全部文件都是 MIT”。源码仓库不附带第三方运行时安装包。
 
 项目链接：[Windows App SDK](https://github.com/microsoft/WindowsAppSDK)、[Windows App SDK 文档](https://learn.microsoft.com/windows/apps/windows-app-sdk/)。
 

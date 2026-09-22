@@ -1,0 +1,44 @@
+# Build outputs and IDE caches
+**/bin/
+**/obj/
+artifacts/
+.vs/
+.idea/
+.nuget/
+packages/
+TestResults/
+*.user
+*.suo
+*.exe
+*.dll
+*.pdb
+*.zip
+*.msix
+*.msixbundle
+
+# Private application data, downloaded content and credentials
+QingLanCommunity/
+QingLanReader/
+DailyEssayApp/
+data/
+backups/
+journals.json
+campus.json
+favorites.json
+online.json
+reader-settings.json
+settings.json
+reader_settings.txt
+journal_notes.txt
+favorites.txt
+online_articles.txt
+.env
+.env.*
+*.key
+*.pem
+*.pfx
+*.log
+
+# OS metadata
+Thumbs.db
+.DS_Store

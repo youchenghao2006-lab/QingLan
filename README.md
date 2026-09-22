@@ -1,4 +1,4 @@
-# 青岚 · 每日散文
+# 青岚 · 书课之间
 
 一个面向 Windows 桌面的阅读与校园生活小工具。以蓝绿色、山水线条和中文阅读字体，把每日散文、随心记、课表和备忘录放在一起。
 
@@ -41,7 +41,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\Publish.ps1
 
 `ExecutionPolicy Bypass` 仅用于本次脚本进程，不修改系统策略；先阅读脚本再执行。若设备有组织策略限制，请遵循管理员要求。
 
-测试是两个自包含控制台测试程序，失败返回非零退出码，不使用 `dotnet test`。它们只生成临时虚构数据，不读取你的真实笔记，也不需要连接在线文库。发布结果在 `artifacts/publish`，分享运行版需复制整个目录，不能只拿出其中的 EXE。
+测试是两个独立控制台测试程序，失败返回非零退出码，不使用 `dotnet test`。它们只生成临时虚构数据，不读取你的真实笔记，也不需要连接在线文库。发布结果在 `artifacts/publish`，分享运行版需复制整个目录，不能只拿出其中的 EXE。发布脚本自动附带项目许可、说明，以及已还原 NuGet 包提供的许可文件、声明和许可元数据。
+
+GitHub Actions 在推送和 Pull Request 时运行测试、构建 Windows x64 程序，并检查发布包的许可文件。Dependabot 每周检查 NuGet 和工作流依赖，更新通过 Pull Request 审阅。
 
 ## 目录结构
 
@@ -68,4 +70,4 @@ docs/            使用、隐私和资源说明
 
 项目自有代码、文档、几何图形和新写的演示文本按 [MIT](LICENSE) 提供（在依法享有相关权利的范围内），允许商用；第三方软件和在线文章不因此变更许可。参见 [第三方与资源说明](THIRD_PARTY_NOTICES.md) 及 [贡献指南](CONTRIBUTING.md)。
 
-发布前请检查提交中没有 `.vs`、`bin`、`obj`、本地数据库、密钥、私人截图或下载文章。运行版放 GitHub Releases，源码仓库不应包含编译产物或 NuGet 缓存。本目录尚未关联或上传任何 GitHub 仓库。
+发布前请检查提交中没有 `.vs`、`bin`、`obj`、本地数据库、密钥、私人截图或下载文章。运行版放 GitHub Releases，源码仓库不应包含编译产物或 NuGet 缓存。项目仓库：[youchenghao2006-lab/QingLan](https://github.com/youchenghao2006-lab/QingLan)。
